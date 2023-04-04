@@ -1,61 +1,65 @@
-import{OBJEKTUMLISTA} from "./adat.js";
-import {rendezesObjektum} from "./rendezes.js";
+import { OBJEKTUMLISTA } from "./adat.js";
+import { rendezesObjektum } from "./rendezes.js";
 
 const kuka = `<img src="kepek/kuka.png" alt="tölés" class="kuka" width="3%"`
-$(function(){
-    init();
+$(function () {
+  init();
 
 
-  });
+});
 
 
-function init(){
+function init() {
   console.log("hi");
   const articleElem = $("article");
   let tablazat = tablazatKeszit(OBJEKTUMLISTA);
   console.log(tablazat);
   articleElem.html(tablazat);
   const thElem = $("th");
-  thElem.on("click", function(){
+  thElem.on("click", function () {
     let kulcs = $(event.target).attr("id")
     rendezesObjektum(OBJEKTUMLISTA, kulcs);
     console.log(OBJEKTUMLISTA);
     init();
   });
+              //Torles kuka 
   const kukaIcon = $(".kuka");
-  kukaIcon.on("click", function(){
+  kukaIcon.on("click", function () {
     const kuka = $(this);
     const sor = kuka.attr("id");
-    torles(sor);
-    console.log(sor);
+   torles();
 
 
   });
+  
+  function torles() {
+      $(document).ready(function(){
+      $("table").on('click', '.kuka',function(){
+          $(this).closest('tr').remove();
+      });
+    });
+}
+        //Torles kuka vege
+
+}
+function tablazatKeszit(OBJEKTUMLISTA) {
+  let tablazat = "<table class='table table-striped'>";
+  tablazat += " <thead class='table-dark'>";
+  tablazat += "<tr> <th id='nev'> Név: </th> <th id='kor'>Kor:</th><th id='fajta'> Fajta: </th> <th> </th></tr>"
+  tablazat += "</thead>"
+  for (let index = 0; index < OBJEKTUMLISTA.length; index++) {
+    tablazat += "<tr>";
+    tablazat += "<td>" + OBJEKTUMLISTA[index].nev + "</td>" + "<td>" + OBJEKTUMLISTA[index].kor + "</td>" + "<td>" + OBJEKTUMLISTA[index].fajta + "</td>" + "<td>" + kuka + `id="${index}">` + "</td>";
+    tablazat += "</tr>";
+  }
+  tablazat += "</table>";
+
+  return tablazat += "</table>";
 
 
 }
-function tablazatKeszit(OBJEKTUMLISTA){
-    let tablazat = "<table class='table table-striped'>";
-    tablazat += " <thead class='table-dark'>";
-    tablazat += "<tr> <th id='nev'> Név: </th> <th id='kor'>Kor:</th><th id='fajta'> Fajta: </th> <th> </th></tr>"
-    tablazat += "</thead>" 
-    for (let index = 0; index < OBJEKTUMLISTA.length; index++) {
-      tablazat +="<tr>";
-      tablazat += "<td>" + OBJEKTUMLISTA[index].nev + "</td>" + "<td>" + OBJEKTUMLISTA[index].kor +"</td>" + "<td>" + OBJEKTUMLISTA[index].fajta +"</td>" + "<td>" + kuka + `id="${index}">` + "</td>";
-      tablazat +="</tr>";
-    }
-    tablazat += "</table>";
-    
-    return tablazat += "</table>";
-  
-  
-  }
 
 
-  function torles(tablazatKeszit) {
-  
-  }
-  
 
-    
-  
+
+
