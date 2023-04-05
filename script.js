@@ -22,27 +22,26 @@ function init() {
     console.log(OBJEKTUMLISTA);
     init();
   });
-              //Torles kuka 
-  const kukaIcon = $(".kuka");
-  kukaIcon.on("click", function () {
-    const kuka = $(this);
-    const sor = kuka.attr("id");
-   torles();
+  kukazas();
+ 
 
+  function kukazas(){
+    const kukaIcon = $(".kuka");
+    kukaIcon.on("click", function() {
+      const kuka = $(this);
+      const sor = kuka.attr("id");
+      OBJEKTUMLISTA.splice(sor,1);
+      init();
 
-  });
+    })
+
+  }
   
-  function torles() {
-      $(document).ready(function(){
-      $("table").on('click', '.kuka',function(){
-          $(this).closest('tr').remove();
-      });
-    });
-}
         //Torles kuka vege
 
 }
 function tablazatKeszit(OBJEKTUMLISTA) {
+  
   let tablazat = "<table class='table table-striped'>";
   tablazat += " <thead class='table-dark'>";
   tablazat += "<tr> <th id='nev'> Név: </th> <th id='kor'>Kor:</th><th id='fajta'> Fajta: </th> <th> </th></tr>"
