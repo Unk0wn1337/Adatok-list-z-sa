@@ -6,3 +6,4 @@ export const OBJEKTUMLISTA =[
     { nev: "Happy", fajta: "németjuhász", kor:42},
     { nev: "Kankapec Jozsef", fajta:"vizsla",kor:18}
 ]
+//kep 184x184
