@@ -1,3 +1,13 @@
+export function searchKereses(){
+  let elemek = 
+  `<input type="text" id="searchBar" placeholder="Search...">
+  <ul id="results"></ul>`;
+  return elemek;
+
+}
+
+
+
 export function listabaUjelem() {
     let elem = `<div class="ujKutya"> <h2>Kutya hozzáadása:</h2>
   <div class="kutya">
@@ -62,3 +72,17 @@ export function listabaUjelem() {
   </div>`;
     return elem;
   }
+
+  export function sorValtozo (ertek){
+   const kiiras = 
+      `<td><input type="text" name="neve" id="neve" value="${ertek.nev}"></td>
+      <td><input type="text" name="kora" id="kora" value="${ertek.kor}"></td>
+      <td><input type="text" name="fajtaja" id="fajtaja" value="${ertek.fajta}"></input></td>
+      <td><input type="button" value="módositás" name="modosit" id="modosit" class="modos"></td>
+      <td> <input type="button" value="mégse" name="vissza" id="vissza"></td>`;
+  return kiiras  
+}
+
+
+
+  
