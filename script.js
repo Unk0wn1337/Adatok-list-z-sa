@@ -42,19 +42,22 @@ function init() {
     ujElemek.html(uj);
     hozzaad();
   });  
-  const searchBar = document.getElementById('search-bar');
+  const searchBar = document.getElementById('searchBar');
   const results = document.getElementById('results');
 
   searchBar.addEventListener('input', () => {
   const query = searchBar.value.toLowerCase();
- 
+
+  
   results.innerHTML = '';
+
   
   const filteredData = OBJEKTUMLISTA.filter(item => {
     const name = item.nev.toLowerCase();
     return name.includes(query);
   });
 
+  
   filteredData.forEach(item => {
     const li = document.createElement('li');
     li.textContent = item.nev;
