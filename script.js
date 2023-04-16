@@ -1,6 +1,7 @@
 import { OBJEKTUMLISTA } from "./adat.js";
 import { rendezesObjektum } from "./rendezes.js";
 import { listabaUjelem , alapNav, sorValtozo, searchKereses} from "./webkiiras.js";
+import { szuLista } from "./kereses.js";
 const kuka = `<img src="kepek/kuka.png" alt="cera" class="kuka" width="3%"`
 const ceruzaCigi = `<img src="kepek/ceruza.png" alt="tölés" class="cerka" width="3%"`
 const uploadButton = `<img src="kepek/upload.png" alt="upi" class="upload" width="3%"`
@@ -9,15 +10,15 @@ const kutya = "";
 const szortirozo = `"<tr id ='semmi'> <th id='nev'${round}> Név: </th> <th id='kor'  ${round}>Kor:</th><th id='fajta'  ${round} > Fajta: </th> <th class='üres'> </th> <th class="üres"> </th></tr>";`;
 
 $(function () {
+  $("nav").html(alapNav());
   init();
-
+  init(OBJEKTUMLISTA);
 
 });
 
 
-function init() {
+function init(lista) {
   $("header").html(searchKereses());
-  $("nav").html(alapNav());
   console.log("hi");
   const articleElem = $("article");
   let tablazat = tablazatKeszit(OBJEKTUMLISTA);
@@ -29,6 +30,7 @@ function init() {
     rendezesObjektum(OBJEKTUMLISTA, kulcs);
     console.log(OBJEKTUMLISTA);
     init();
+    init(lista);
   });
   
   modifikalas();
@@ -42,38 +44,34 @@ function init() {
     ujElemek.html(uj);
     hozzaad();
   });  
-  const searchBar = document.getElementById('searchBar');
-  const results = document.getElementById('results');
+    
 
-  searchBar.addEventListener('input', () => {
-  const query = searchBar.value.toLowerCase();
+  search();
 
-  
-  results.innerHTML = '';
-
-  
-  const filteredData = OBJEKTUMLISTA.filter(item => {
-    const name = item.nev.toLowerCase();
-    return name.includes(query);
-  });
-
-  
-  filteredData.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item.nev;
-    results.appendChild(li);
-  });
-});
-
-
-}
-  
-
-
-
+  function search(){
+    let kutyaKor = "";
+    let kutyaFaj = "";
+    let kutyaNev = "";
+    $("#nevKeres").keyup(function () {
+      console.log("hello");
+      kutyaNev = $(this).val();
+      let szuresEredmeny = szuLista("nev", OBJEKTUMLISTA, kutyaNev);
+      init(szuresEredmeny);
+    });
+    $("#korKeres").keyup(function () {
+      kutyaKor = $(this).val();
+      let szuresEredmeny = szuLista("kor", OBJEKTUMLISTA, kutyaKor);
+      init(szuresEredmeny);
+    });
+    $("#fajtaKeres").keyup(function () {
+      kutyaFaj = $(this).val();
+      let szuresEredmeny = szuLista("fajta", OBJEKTUMLISTA, kutyaFaj);
+      init(szuresEredmeny);
+    });
   
 
-
+  }
+} 
 
 
 function hozzaad() {
@@ -103,9 +101,16 @@ function hozzaad() {
       console.log(kutyaNev);
       console.log(kutyaKor);
       console.log(kutyaFaj);
-      init();
+      init(OBJEKTUMLISTA);
     }
   });
+
+
+
+
+
+
+
 }
 
 function meghatarozo(ertek) {
