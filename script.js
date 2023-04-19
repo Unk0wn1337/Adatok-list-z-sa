@@ -2,9 +2,9 @@ import { OBJEKTUMLISTA } from "./adat.js";
 import { rendezesObjektum } from "./rendezes.js";
 import { listabaUjelem , alapNav, sorValtozo, searchKereses} from "./webkiiras.js";
 import { szuLista } from "./kereses.js";
-const kuka = `<img src="kepek/kuka.png" alt="cera" class="kuka" width="3%"`
-const ceruzaCigi = `<img src="kepek/ceruza.png" alt="tölés" class="cerka" width="3%"`
-const uploadButton = `<img src="kepek/upload.png" alt="upi" class="upload" width="3%"`
+const kuka = `<img src="kepek/kuka.png" alt="cera" class="kuka" width="30px"`
+const ceruzaCigi = `<img src="kepek/ceruza.png" alt="tölés" class="cerka" width="30px"`
+const uploadButton = `<img src="kepek/upload.png" alt="upi" class="upload" width="30px"`
 const round = `class="szort"`;
 const kutya = "";
 const szortirozo = `<tr id ='semmi'> <th id='nev'${round}> Név: </th> <th id='kor'  ${round}>Kor:</th><th id='fajta'  ${round} > Fajta: </th> <th class='üres'> </th> <th class="üres"> </th></tr>`;

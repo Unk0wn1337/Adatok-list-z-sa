@@ -1,9 +1,40 @@
-import { OBJEKTUMLISTA } from "./adat.js";
-import { rendezesObjektum } from "./rendezes.js";
-import { articleElemek ,  headerElem, footerElem } from "./webkiirasPublic.js"
-$(function() {
-    $("header").html(headerElem());
-    $("section").html(articleElemek());
-    $("footer").html(footerElem());
+import  {OBJEKTUMLISTA} from "./adat.js";
+const lista = OBJEKTUMLISTA
+const kosar = [];
+
+$(function () {
+  $("section").html(articleElemek());
+  $("aside").html(asideElemek());
 });
-//  let kiiras = articleElemek();
+
+
+
+function articleElemek() {
+  let kutyaDobozok = "";
+  for (let index = 0; index < OBJEKTUMLISTA.length; index++) {
+    kutyaDobozok += `<div class="kutya">
+       <img src="${OBJEKTUMLISTA[index].kep}" alt="kutya" class="kutyusKepek">     
+       <h3>${OBJEKTUMLISTA[index].nev}</h3>
+       <h4>kora ${OBJEKTUMLISTA[index].kor} éves</h4>
+       <h5>${OBJEKTUMLISTA[index].fajta}</h5>
+       <button class= "elem"id="${index}">kosar</button>
+   </div>`;
+  }
+  console.log(kutyaDobozok);
+  return kutyaDobozok;
+}
+
+function asideElemek(){
+  const termek = $(".elem");
+  termek.on("click", function() {
+    const kutya = $(this);
+    const doboz = kutya.attr(id);
+    kosar.push(OBJEKTUMLISTA.nev[doboz]);
+    OBJEKTUMLISTA.splice(doboz,1)
+    
+  })
+
+
+
+
+}
