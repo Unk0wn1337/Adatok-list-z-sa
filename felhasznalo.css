@@ -16,5 +16,5 @@ header {
 .kutyusKepek{
     width: 184px;
     height: 184px;
-
+    border: solid 3px black;
 }

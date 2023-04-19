@@ -21,7 +21,7 @@ export function articleElemek(){
 
             <div class="kutya">
                 <br>
-                <img src="kutyakepek/Rottweiler.jpg" alt="Rotiiii" class="kutyusKepek">     
+                <img src="kutyakepek/rövidszőrű tacskó.jpg" alt="Rotiiii" class="kutyusKepek">     
                 <h3>Bodri</h3>
                 <h4>13 eves</h4>
                 <h5>fajta mudi</h5>
@@ -29,7 +29,7 @@ export function articleElemek(){
             </div>
             <div class="kutya">
                 <br>
-                <img src="kutyakepek/Rottweiler.jpg" alt="Rotiiii" class="kutyusKepek">     
+                <img src="kutyakepek/schnauzer.jpg" alt="Rotiiii" class="kutyusKepek">     
                 <h3>Loki</h3>
                 <h4>5 eves</h4>
                 <h5>Fajta: tacskó</h5>
@@ -37,14 +37,14 @@ export function articleElemek(){
             </div>
             <div class="kutya">
             <br>
-            <img src="kutyakepek/Rottweiler.jpg" alt="Rotiiii" class="kutyusKepek">     
+            <img src="kutyakepek/k9.jpg" alt="Rotiiii" class="kutyusKepek">     
             <h3>Balint</h3>
             <h4>4 eves</h4>
             <h5>Fajta: foxterrier</h5>
             <button id="kosar">kosar</button>
             </div> <div class="kutya">
             <br>
-            <img src="kutyakepek/Rottweiler.jpg" alt="Rotiiii" class="kutyusKepek">     
+            <img src="kutyakepek/schnauzer.jpg" alt="Rotiiii" class="kutyusKepek">     
             <h3>Happy</h3>
             <h4>42 eves</h4>
             <h5>Fajta: németjuhász</h5>
@@ -52,7 +52,7 @@ export function articleElemek(){
             </div>
             </div> <div class="kutya">
             <br>
-            <img src="kutyakepek/Rottweiler.jpg" alt="Rotiiii" class="kutyusKepek">     
+            <img src="kutyakepek/rövidszőrű tacskó.jpg" alt="Rotiiii" class="kutyusKepek">     
             <h3>Kankapec Jozsef</h3>
             <h4>18 eves</h4>
             <h5>Fajta: vizsla</h5>
@@ -62,11 +62,10 @@ export function articleElemek(){
             
     return kutyaDobozok;
 }
-export function asideElemek() {
-   let kosarasok =  
-   `<div id="asideKosar">
-         
+export  function footerElem (){
+   let footersElem = `<div id="kosarbaVele">
+    <br>
+    <img src="kepek/kosarka.png" alt="kosaracska" width="5%">
     </div>`;
-    return kosarasok;
-
+    return footersElem;
 }
