@@ -1,28 +1,24 @@
-export function szuLista(mit, OBJEKTUMLISTA, adatLista) {
+export function szuLista(kulcs, adatLista, szuresiFeltetel) {
 
-    if (OBJEKTUMLISTA == ""){
-        return adatLista
-    }else{                      
-            const szurtiLista = adatLista.filter(function (elem) {
-                let szf = "";
-                if (typeof elem[mit] == "number") {
-                    if(szuresFeltetel[0] == "=") {
-                        szf = "==" + szuresFeltetel;
-                    } else{
-                            szf = szuresFeltetel;
-                    }
-                        return eval(elem[mit] + szf);
-                } else {
-                    return elem[mit].toUpperCase().includes(szuresiFeltetel.toUpperCase());
-
-                }
-
-
-            });
-            return szurtiLista;
+    //OBJEKTUMLISTA//
+const szurtiLista = adatLista.filter(function (elem) {
+let szf = "";
+if (typeof elem[kulcs] == "number") {
+  if(szuresiFeltetel == "=") {
+      szf = "==" + szuresiFeltetel;
+  } else{
+          szf = szuresiFeltetel;
+  }
+      return eval(elem[kulcs] + szf);
+} else {
+  return elem[kulcs].toUpperCase().includes(szuresiFeltetel.toUpperCase());
+      
+}
+});
+return szurtiLista;
 
 
-    }
+
 
 
 }

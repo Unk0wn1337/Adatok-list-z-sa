@@ -1,0 +1,20 @@
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+}
+.kutya{
+    border: solid 1px black;
+
+}
+header {
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.kutyusKepek{
+    width: 184px;
+    height: 184px;
+
+}

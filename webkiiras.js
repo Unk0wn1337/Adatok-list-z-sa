@@ -43,36 +43,38 @@ export function listabaUjelem() {
   }
   export function alapNav() {
     let elem = `<h2>Keresés</h2>
-  <div class="kutya">
-  
-    <div class="menu">
-   
-      <form action="get">
-      <div>
-        <label for="nev">Kutya neve:</label>
-        <br />
-        <input type="text" id="nev" name="nev" />  
-      </div>     
-      <div>
-        <label for="kor">Kutya életkora:</label>
-        <br />
-        <input type="text" id="kor" name="kor" />
+    <div class="kutya">
+    
+      <div class="menu">
+     
+        <form action="get">
+        <div>
+          <label for="nev">Kutya neve:</label>
+          <br />
+          <input type="text" id="nevKeres" name="nevKeres" /> 
+          <ul id="nevResult"></ul> 
+        </div>     
+        <div>
+          <label for="kor">Kutya életkora:</label>
+          <br />
+          <input type="text" id="korKeres" name="korKeres" />
+          <ul id="korResult"></ul> 
+        </div>
+        <div>
+          <label for="fajta">Kutya fajta:</label>
+          <br />
+          <input type="text" id="fajtaKeres" name="fajtaKeres" />
+          <ul id="fajtaResult"></ul> 
       </div>
-      <div>
-        <label for="fajta">Kutya fajta:</label>
-        <br />
-        <input type="text" id="fajta" name="fajta" />
-    </div>
-    <div class="gombok">
-      <br>
-      <input type="button" id="add" value="hozzáad" />
+      <div class="gombok">
+        <br>
+        <input type="button" id="add" value="hozzáad" />
+        </div>
+        </form>
       </div>
-      </form>
-    </div>
-  </div>`;
+    </div>`;
     return elem;
   }
-
   export function sorValtozo (ertek){
    const kiiras = 
       `<td><input type="text" name="neve" id="neve" value="${ertek.nev}"></td>
