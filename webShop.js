@@ -4,6 +4,7 @@ const kosar = [];
 
 $(function () {
   $("section").html(articleElemek());
+  
   $("aside").html(asideElemek());
 });
 
@@ -25,12 +26,14 @@ function articleElemek() {
 }
 
 function asideElemek(){
+
   const termek = $(".elem");
   termek.on("click", function() {
     const kutya = $(this);
-    const doboz = kutya.attr(id);
-    kosar.push(OBJEKTUMLISTA.nev[doboz]);
-    OBJEKTUMLISTA.splice(doboz,1)
+    const doboz = kutya.attr("id");
+    kosar.push(lista[doboz]);
+    
+    
     
   })
 

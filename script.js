@@ -1,6 +1,6 @@
 import { OBJEKTUMLISTA } from "./adat.js";
 import { rendezesObjektum } from "./rendezes.js";
-import { listabaUjelem , alapNav, sorValtozo, searchKereses} from "./webkiiras.js";
+import { listabaUjelem , alapNav, sorValtozo} from "./webkiiras.js";
 import { szuLista } from "./kereses.js";
 const kuka = `<img src="kepek/kuka.png" alt="cera" class="kuka" width="30px"`
 const ceruzaCigi = `<img src="kepek/ceruza.png" alt="tölés" class="cerka" width="30px"`
@@ -18,7 +18,7 @@ $(function () {
 
 
 function init(lista) {
-  $("header").html(searchKereses());
+  
   console.log("hi");
   const articleElem = $("article");
   let tablazat = tablazatKeszit(OBJEKTUMLISTA);

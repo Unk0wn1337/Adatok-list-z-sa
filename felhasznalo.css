@@ -1,3 +1,5 @@
+
+
 main{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -20,6 +22,7 @@ main{
     
 
 section {
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
@@ -44,8 +47,29 @@ footer{
 
 }
 
-@media screen  and (max-width: 1400px){
+@media screen and (max-width: 1400px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'h h'
+        'a as'
+        'f f' ;
+    }
     
-
-}
-    
+    section {
+        grid-template-columns: 1fr 1fr;
+    }
+    }
+    @media screen and (max-width: 700px) {
+        main {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            'h h'
+            'a as'
+            'f f' ;
+        }
+        
+        section {
+            grid-template-columns: 1fr;
+        }
+    }
